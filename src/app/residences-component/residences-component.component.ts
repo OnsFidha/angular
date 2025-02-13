@@ -21,7 +21,7 @@ export class ResidencesComponentComponent {
     "image":"../../assets/images/téléchargement (2).jfif", status: "En Construction"}
     ];
     filteredResidences: Residence[] = [...this.listResidences];
-
+    likedResidences: Residence[]=[];
 filter() {
   this.filteredResidences = this.listResidences.filter(res => 
     res.address.toLowerCase().includes(this.searchValue.toLowerCase())
@@ -31,6 +31,7 @@ filter() {
 
 toggleLike(residence: Residence) {
   residence.liked = !residence.liked;
+  this.likedResidences.push(residence);
 }
 
 show(i: number) {

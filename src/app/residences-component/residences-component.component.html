@@ -1,38 +1,54 @@
 <div class="container mt-4">
-    <div class="d-flex justify-content-center mb-4">
-      <input 
-        type="text" 
-        class="form-control w-50 shadow-sm p-2 rounded"
-        placeholder="🔍 Rechercher par adresse..." 
-        [(ngModel)]="searchValue" 
-        (input)="filter()"
-      >
-    </div>
-      <div class="row justify-content-center">
-      <div *ngFor="let p of filteredResidences; let i = index" class="col-md-4 col-sm-6 mb-4">
-        <div class="card shadow-lg rounded-lg border-0 overflow-hidden">
-          <img class="card-img-top" [src]="p.image" alt="Card image cap" style="height: 200px; object-fit: cover;">
-          <div class="card-body text-center">
-            <h5 class="card-title text-primary fw-bold">{{ p.name }}</h5>
-            <p class="card-text text-muted"><i class="bi bi-geo-alt-fill"></i> {{ p.address }}</p>
-            
-            <p [ngSwitch]="p.status">
-              <span *ngSwitchCase="'Disponible'" class="badge bg-success">✅ Disponible</span>
-              <span *ngSwitchCase="'En Construction'" class="badge bg-warning text-dark">🚧 En Construction</span>
-              <span *ngSwitchCase="'Vendu'" class="badge bg-danger">❌ Vendu</span>
-            </p>
-  
-            <div class="d-flex justify-content-around mt-3">
-              <button (click)="show(i)" class="btn btn-outline-primary">
-                📍 Show Location
-              </button>
-              <button (click)="toggleLike(p)" class="btn btn-outline-danger">
-                {{ p.liked ? '❤️ Liked' : '♡ Like' }}
-              </button>
-            </div>
+  <div class="d-flex justify-content-center mb-4">
+    <input 
+      type="text" 
+      class="form-control w-50 shadow-sm p-2 rounded"
+      placeholder="🔍 Rechercher par adresse..." 
+      [(ngModel)]="searchValue" 
+      (input)="filter()"
+    >
+  </div>
+
+  <!-- Main Residences List -->
+  <div class="row justify-content-center">
+    <div *ngFor="let p of filteredResidences; let i = index" class="col-md-4 col-sm-6 mb-4">
+      <div class="card shadow-lg rounded-lg border-0 overflow-hidden">
+        <img class="card-img-top" [src]="p.image" alt="Card image cap" style="height: 200px; object-fit: cover;">
+        <div class="card-body text-center">
+          <h5 class="card-title text-primary fw-bold">{{ p.name }}</h5>
+          
+          <p [ngSwitch]="p.status">
+            <span *ngSwitchCase="'Disponible'" class="badge bg-success">✅ Disponible</span>
+            <span *ngSwitchCase="'En Construction'" class="badge bg-warning text-dark">🚧 En Construction</span>
+            <span *ngSwitchCase="'Vendu'" class="badge bg-danger">❌ Vendu</span>
+          </p>
+
+          <div class="d-flex justify-content-around mt-3">
+            <button (click)="show(i)" class="btn btn-outline-primary">
+              📍 Show Location
+            </button>
+            <button (click)="toggleLike(p)" class="btn btn-outline-danger">
+              {{ p.liked ? '❤️ Liked' : '♡ Like' }}
+            </button>
           </div>
         </div>
       </div>
     </div>
   </div>
-  
+
+  <!-- Liked Residences Section -->
+  <div *ngIf="likedResidences.length > 0">
+    <h3 class="text-center mt-5 text-danger">❤️ Liked Residences</h3>
+    <div class="row justify-content-center">
+      <div *ngFor="let p of likedResidences" class="col-md-4 col-sm-6 mb-4">
+        <div class="card shadow-lg rounded-lg border-0 overflow-hidden">
+          <img class="card-img-top" [src]="p.image" alt="Card image cap" style="height: 200px; object-fit: cover;">
+          <div class="card-body text-center">
+            <h5 class="card-title text-primary fw-bold">{{ p.name }}</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
