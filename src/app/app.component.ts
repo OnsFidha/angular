@@ -6,5 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'projet0';
+fct() {
+alert('Method not implemented.');
 }
+  title = 'projet0';
+  tab=[
+    {"nom":"ons"},
+    {"nom":"noussa"}
+  ]
+  };
+

@@ -1,0 +1,42 @@
+<!--
+<h1> {{title}} </h1>
+<table border="1">
+
+    <tr>
+        <td>name</td>
+        <td>price</td>
+        <td>description</td>
+        <td>quantity</td>
+        <td>image</td>
+        <td>action</td>
+    </tr>
+
+    <tr *ngFor="let p of products, let i =index">
+        <td>{{p.name}}</td>
+        <td>{{p.price}}</td>
+        <td>{{p.description}}</td>
+        <td>{{p.quantity}}</td>
+        <td><img src="{{p.img}}" alt="image" width="100" height="100"></td>
+        <td><button class="btn btn-info" [disabled]="p.quantity==0" (click)="buy(i)">buy</button></td>
+    </tr>
+</table>
+
+
+<button (click)="show()">save</button>
+
+
+<input type="text" placeholder="choose coler" [(ngModel)]="color">
+<p [style.backgroundColor]="color"> propertyBinding </p>
+-->
+<div class="row">    <div *ngFor="let p of products , let i =index" class="card" style="width: 18rem;">
+    <img class="card-img-top" src="{{p.img}}" alt="Card image cap">
+    <div class="card-body">
+        <h5 class="card-title">title {{p.name}}</h5>
+        <p class="card-text">price {{p.price}}</p>
+        <p class="card-text">quantity {{p.quantity}}</p>
+        <button [disabled]="p.quantity==0" (click)="buy(i)" class="btn btn-primary">buy</button>
+    </div>
+</div>
+</div>
+
+
