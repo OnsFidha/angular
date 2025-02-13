@@ -7,6 +7,7 @@ import { HomeComponent } from './home/home.component';
 import { ResidencesComponentComponent } from './residences-component/residences-component.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ErroorComponent } from './erroor/erroor.component';
+import { DetailProdComponent } from './detail-prod/detail-prod.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { ErroorComponent } from './erroor/erroor.component';
     HomeComponent,
     ResidencesComponentComponent,
     NavbarComponent,
-    ErroorComponent
+    ErroorComponent,
+    DetailProdComponent
   ],
   imports: [
     FormsModule ,

@@ -1,0 +1,16 @@
+{{id}}
+<div class="container mt-5">
+    <div *ngIf="product" class="card mx-auto shadow-lg" style="width: 25rem;">
+      <img [src]="product.img" class="card-img-top" alt="Product Image">
+      <div class="card-body text-center">
+        <h5 class="card-title text-primary fw-bold">{{ product.name }}</h5>
+        <p class="card-text text-muted">💰 Price: {{ product.price }}$</p>
+        <p class="card-text">📦 Quantity: 
+          <span [ngClass]="{'text-danger fw-bold': product.quantity === 0, 'text-success': product.quantity > 0}">
+            {{ product.quantity }}
+          </span>
+        </p>
+        <p class="card-text">{{ product.description }}</p>
+      </div>
+    </div>
+  </div>
