@@ -33,6 +33,9 @@
             <button [routerLink]="['/detail',p.id]" class="btn btn-outline-primary">
              Détails
             </button>
+            <button (click)="sup(p.id)" class="btn btn-outline-primary">
+              Delete
+             </button>
           </div>
         </div>
       </div>

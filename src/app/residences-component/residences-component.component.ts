@@ -8,6 +8,11 @@ import { ResidenceService } from '../service/residence.service';
   styleUrls: ['./residences-component.component.css']
 })
 export class ResidencesComponentComponent implements OnInit {
+sup(id: number) {
+this.re.deleteResidence(id).subscribe(
+ ()=> this.ngOnInit()
+);
+}
   searchValue: string = "";
   listResidences: Residence[] = [];
   filteredResidences: Residence[] = [];

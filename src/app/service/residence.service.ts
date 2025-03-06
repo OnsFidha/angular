@@ -20,4 +20,8 @@ export class ResidenceService {
   addResidence(residence:Residence): Observable<Residence[]> {
     return this.http.post<Residence[]>("http://localhost:3000/residences/",residence);
   }
+  deleteResidence(id: number): Observable<void> {
+    return this.http.delete<void>(`${this.URL}/${id}`);
+  }
+  
 }

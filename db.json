@@ -27,13 +27,6 @@
       "address": "inconnu",
       "image": "../../assets/images/téléchargement (2).jfif",
       "status": "En Construction"
-    },
-    {
-      "id": "ee99",
-      "name": "Mourouj",
-      "address": "test",
-      "image": "http",
-      "status": "En Construction"
     }
   ]
 }
