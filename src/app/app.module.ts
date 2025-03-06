@@ -10,7 +10,8 @@ import { ErroorComponent } from './erroor/erroor.component';
 import { DetailProdComponent } from './detail-prod/detail-prod.component';
 import { LoginComponent } from './login/login.component';
 import { FormProductComponent } from './form-product/form-product.component';
-
+import{HttpClientModule}from"@angular/common/http";
+import { DetailsResidenceComponent } from './details-residence/details-residence.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,9 +21,11 @@ import { FormProductComponent } from './form-product/form-product.component';
     ErroorComponent,
     DetailProdComponent,
     LoginComponent,
-    FormProductComponent
+    FormProductComponent,
+    DetailsResidenceComponent
   ],
   imports: [
+    HttpClientModule,
     FormsModule ,
     BrowserModule,
     AppRoutingModule,

@@ -30,6 +30,9 @@
             <button (click)="toggleLike(p)" class="btn btn-outline-danger">
               {{ p.liked ? '❤️ Liked' : '♡ Like' }}
             </button>
+            <button [routerLink]="['/detail',p.id]" class="btn btn-outline-primary">
+             Détails
+            </button>
           </div>
         </div>
       </div>

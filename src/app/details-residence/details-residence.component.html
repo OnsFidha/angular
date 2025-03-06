@@ -1,0 +1,10 @@
+{{id}}
+<div *ngIf="residence">
+  <p>ID: {{ residence.id }}</p>
+  <p>Adresse: {{ residence.address }}</p> <!-- Assurez-vous que c'est 'address' et pas 'adresse' -->
+</div>
+
+<!-- Si 'residence' n'est pas défini -->
+<div *ngIf="!residence">
+  <p>Aucune résidence sélectionnée</p>
+</div>

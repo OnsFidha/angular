@@ -7,6 +7,7 @@ import { ErroorComponent } from './erroor/erroor.component';
 import { DetailProdComponent } from './detail-prod/detail-prod.component';
 import { LoginComponent } from './login/login.component';
 import { FormProductComponent } from './form-product/form-product.component';
+import { DetailsResidenceComponent } from './details-residence/details-residence.component';
 
 const routes: Routes = [
   {path: 'residence',component: ResidencesComponentComponent},
@@ -15,6 +16,8 @@ const routes: Routes = [
 
   {path:'login',component:LoginComponent},
   {path:'details/:id',component:DetailProdComponent},
+  {path:'detail/:id',component:DetailsResidenceComponent},
+
   {path:'',redirectTo:'residence',pathMatch:'full'},
   {path:'**',component:ErroorComponent}
 ];
