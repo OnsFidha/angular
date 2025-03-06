@@ -12,6 +12,7 @@ import { LoginComponent } from './login/login.component';
 import { FormProductComponent } from './form-product/form-product.component';
 import{HttpClientModule}from"@angular/common/http";
 import { DetailsResidenceComponent } from './details-residence/details-residence.component';
+import { FromResidenceComponent } from './from-residence/from-residence.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +23,8 @@ import { DetailsResidenceComponent } from './details-residence/details-residence
     DetailProdComponent,
     LoginComponent,
     FormProductComponent,
-    DetailsResidenceComponent
+    DetailsResidenceComponent,
+    FromResidenceComponent
   ],
   imports: [
     HttpClientModule,
