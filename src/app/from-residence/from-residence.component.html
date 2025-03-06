@@ -1,1 +1,44 @@
-<p>from-residence works!</p>
+<form [formGroup]="residenceForm" (ngSubmit)="onSubmit()" class="container mt-5">
+    <h2 class="text-center mb-4">Ajouter une Résidence</h2>
+  
+    <!-- Name Field -->
+    <div class="mb-3">
+      <label for="name" class="form-label">Nom</label>
+      <input id="name" formControlName="name" type="text" class="form-control" />
+      <div *ngIf="residenceForm.get('name').invalid && residenceForm.get('name').touched" class="text-danger">
+        Nom est requis
+      </div>
+    </div>
+  
+    <!-- Address Field -->
+    <div class="mb-3">
+      <label for="address" class="form-label">Adresse</label>
+      <input id="address" formControlName="address" type="text" class="form-control" />
+      <div *ngIf="residenceForm.get('address').invalid && residenceForm.get('address').touched" class="text-danger">
+        Adresse est requise
+      </div>
+    </div>
+  
+    <!-- Image URL Field -->
+    <div class="mb-3">
+      <label for="image" class="form-label">Image URL</label>
+      <input id="image" formControlName="image" type="text" class="form-control" />
+      <div *ngIf="residenceForm.get('image').invalid && residenceForm.get('image').touched" class="text-danger">
+        URL de l'image est requise
+      </div>
+    </div>
+  
+    <!-- Status Field -->
+    <div class="mb-3">
+      <label for="status" class="form-label">Statut</label>
+      <select id="status" formControlName="status" class="form-select">
+        <option value="Disponible">Disponible</option>
+        <option value="Vendu">Vendu</option>
+        <option value="En Construction">En Construction</option>
+      </select>
+    </div>
+  
+    <!-- Submit Button -->
+    <button type="submit" [disabled]="residenceForm.invalid" class="btn btn-primary w-100">Ajouter Résidence</button>
+  </form>
+  

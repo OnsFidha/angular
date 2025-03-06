@@ -8,11 +8,13 @@ import { DetailProdComponent } from './detail-prod/detail-prod.component';
 import { LoginComponent } from './login/login.component';
 import { FormProductComponent } from './form-product/form-product.component';
 import { DetailsResidenceComponent } from './details-residence/details-residence.component';
+import { FromResidenceComponent } from './from-residence/from-residence.component';
 
 const routes: Routes = [
   {path: 'residence',component: ResidencesComponentComponent},
   {path:'produit',component:HomeComponent},
   {path:'addProduit',component:FormProductComponent},
+  {path:'addRes',component:FromResidenceComponent},
 
   {path:'login',component:LoginComponent},
   {path:'details/:id',component:DetailProdComponent},

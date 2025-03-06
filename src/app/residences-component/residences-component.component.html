@@ -8,7 +8,7 @@
       (input)="filter()"
     >
   </div>
-
+<button [routerLink]="['/addRes']"class="btn btn-outline-primary">add</button>
   <!-- Main Residences List -->
   <div class="row justify-content-center">
     <div *ngFor="let p of filteredResidences; let i = index" class="col-md-4 col-sm-6 mb-4">
