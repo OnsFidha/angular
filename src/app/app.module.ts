@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms'; 
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'; 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -8,6 +8,8 @@ import { ResidencesComponentComponent } from './residences-component/residences-
 import { NavbarComponent } from './navbar/navbar.component';
 import { ErroorComponent } from './erroor/erroor.component';
 import { DetailProdComponent } from './detail-prod/detail-prod.component';
+import { LoginComponent } from './login/login.component';
+import { FormProductComponent } from './form-product/form-product.component';
 
 @NgModule({
   declarations: [
@@ -16,12 +18,15 @@ import { DetailProdComponent } from './detail-prod/detail-prod.component';
     ResidencesComponentComponent,
     NavbarComponent,
     ErroorComponent,
-    DetailProdComponent
+    DetailProdComponent,
+    LoginComponent,
+    FormProductComponent
   ],
   imports: [
     FormsModule ,
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
